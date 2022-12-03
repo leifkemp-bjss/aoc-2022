@@ -1,0 +1,12 @@
+file = open("input.txt", "r")
+fileLines = [line.strip("\n") for line in file.readlines()]
+
+commonChars = []
+
+for i in range(len(fileLines) // 3):
+    lines = fileLines[3*i:3*(i+1)]
+    commonChars += set([ord(x) for x in lines[0] if x in lines[1] and x in lines[2]])
+
+sortedChars = [x - 38 if 65 <= x < 91 else x - 96 for x in commonChars]
+print(sortedChars)
+print(sum(sortedChars))
