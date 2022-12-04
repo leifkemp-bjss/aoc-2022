@@ -1,0 +1,1 @@
+print(sum([(ord(x) - 38 if 65 <= ord(x) < 91 else ord(x) - 96) for line in [line.strip("\n") for line in open("input.txt", "r")] for x in set(line[:len(line) // 2]) if x in set(line[len(line) // 2:])]))
