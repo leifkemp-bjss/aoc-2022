@@ -54,14 +54,13 @@ for line in fileLines:
                 break
         if(not foundInt): directory.append(int(command[0]))
 
-print(getDirectorySize(structure))
+getDirectorySize(structure)
 print(sum(smallSizes))
 
 dirSize = getDirectorySize(structure)
 size = 70000000
 req = 30000000
 sizeNeeded = req - (size - dirSize)
-print(sizeNeeded)
 
 minimumEligible = [None, -1]
 for directory in directoriesAndSizes:
